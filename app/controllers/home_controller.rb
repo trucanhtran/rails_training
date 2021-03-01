@@ -13,10 +13,27 @@ class HomeController < ApplicationController
     end
 
     def contact123
+      puts "------"
+      puts params
+      puts "--------"
       @contact_id = params[:contact_id]
+      @name = params[:name1231231]
+      @password = params[:password123]
+
     end
 
     def test
        @test = params[:id]
+       @member= params[:member_id]
     end
+
+    def review
+      @review = params[:review_id]
+    end
+
+    def user
+      @user_id = params[:user_id]
+    end
+
+
 end

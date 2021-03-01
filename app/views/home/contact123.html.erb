@@ -1,12 +1,18 @@
+
 <div class="wrap-contact123">
+
+<%= form_with url: contact123_path(1), method: :get do |form| %>
   <div class="wrap-name">
-    <input type="text" id="id_txtName" class="wrap-txtName"/>
+  <%= form.text_field :name1231231, id: "abc" %>
   </div>
   <div class="wrap-pass">
-    <input type="password" id="id_txtPass" class="wrap-txtPass"/>
+  <%= form.password_field :password123, id: "fafaf", class: "wrap-txtPass" %>
   </div>
   <div>
-    <button type="submit" id="id_btnSubmit" class="wrap-submit">Submit</button>
+  <%= form.submit "submit", id: "id_btnSubmit", class: "wrap-submit" %>
   </div>
-</div>
+<% end %>
 <%= @contact_id %>
+
+<%= @name %>
+<%= @password %>
