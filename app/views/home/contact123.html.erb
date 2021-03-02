@@ -9,6 +9,24 @@
   <%= form.password_field :password123, id: "fafaf", class: "wrap-txtPass" %>
   </div>
   <div>
+    <div>
+      <%= form.check_box :pet_dog %>
+      <%= form.label :pet_dog, "I own a dog" %>
+      <%= form.check_box :pet_cat %>
+      <%= form.label :pet_cat, "I own a cat" %>
+    </div>
+      <%= form.radio_button :age, "child123" %>
+      <%= form.label :age_child, "I am younger than 21" %>
+      <%= form.radio_button :age222, "133" %>
+      <%= form.label :zzzz, "I am over 21", id: "sss", class: "fdafdsaf" %>
+    <div>
+    <div>
+      <%= form.text_area :abc, size: "70x5", id: "zxy", class: "text-area" %>
+      <%= form.url_field :home %>
+    </div>
+    </div>
+
+
   <%= form.submit "submit", id: "id_btnSubmit", class: "wrap-submit" %>
   </div>
 <% end %>

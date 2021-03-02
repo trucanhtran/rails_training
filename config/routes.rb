@@ -8,5 +8,9 @@ Rails.application.routes.draw do
   get '/reviewday2/:review_id', to: 'home#review'
   get '/test/:id/member/:member_id', to: 'user#test', as: "test_ta"
   get '/:id/user/:user_id', to: 'user#contact', as: "contact_ta"
+  get '/form/', to: 'form#basic'
+  get '/card/new', to: 'card#new', as: "card12345"
+  get '/card/create', to: 'card#create', as: "card_create"
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
