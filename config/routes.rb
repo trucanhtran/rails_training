@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get '/form/', to: 'form#basic'
   get '/card/new', to: 'card#new', as: "card12345"
   get '/card/create', to: 'card#create', as: "card_create"
-
+  get '/card/edit', to: 'card#edit', as:"card_edit"
+  post '/submit_form', to: 'card#submit_f', as:"form_submit1"
+  get '/card/city', to: 'card#city', as:"city"
+  post '/submit123', to: 'card#submit', as: "submit123"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

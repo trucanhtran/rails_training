@@ -29,4 +29,16 @@ class CardController < ApplicationController
 
   def update
   end
+
+  def submit_f
+
+  end
+
+  def city
+
+  end
+
+  def submit
+
+  end
 end

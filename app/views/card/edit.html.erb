@@ -1,2 +1,20 @@
-<h1>Card#edit</h1>
-<p>Find me in app/views/card/edit.html.erb</p>
+<div>
+  <%= form_with url: form_submit1_path do |f| %>
+    <div>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, id: "id_first_name", class: "first-name" %>
+    </div>
+    <div>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, id: "id_last_name", class: "last-name" %>
+    </div>
+    <div>
+      <%= f.label :age %>
+      <%= f.number_field :age,  id: "id_age", class: "age" %>
+    </div>
+    <div>
+      <%= f.submit "Submit" %>
+    </div>
+  <% end %>
+</div>
+
