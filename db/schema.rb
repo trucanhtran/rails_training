@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_03_150322) do
+ActiveRecord::Schema.define(version: 2021_03_04_141146) do
+
+  create_table "admins", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "age"
+    t.string "phone"
+    t.string "password"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "kakas", force: :cascade do |t|
     t.string "name"
@@ -30,6 +40,9 @@ ActiveRecord::Schema.define(version: 2021_03_03_150322) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
+
+# Could not dump table "products" because of following StandardError
+#   Unknown type 'decial' for column 'price'
 
   create_table "staffs", force: :cascade do |t|
     t.string "name"
