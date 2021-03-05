@@ -15,5 +15,11 @@ Rails.application.routes.draw do
   post '/submit_form', to: 'card#submit_f', as:"form_submit1"
   get '/card/city', to: 'card#city', as:"city"
   post '/submit123', to: 'card#submit', as: "submit123"
+  get '/list_items', to: 'item#index', as: "item_index"
+  get '/list_item/new', to: 'item#new'
+  post '/list_items/create', to: 'item#create', as: "item_create"
+  put '/list_items/update', to: 'item#update'
+  delete '/list_items/delete', to: 'item#delete'
+  get '/list_items/edit', to: 'item#edit'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

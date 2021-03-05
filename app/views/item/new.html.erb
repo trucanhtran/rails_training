@@ -1,0 +1,27 @@
+<div class="wrap-form">
+  <%= form_with url: item_create_path, id: "id_item_form", class: "item-form" do |f| %>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name, id: "id_name", class: "name", placeholder: "Enter name item" %>
+    </div>
+    <div>
+      <%= f.label :price %>
+      <%= f.number_field :price, id: "id_price", class: "price", placeholder: "Enter price" %>
+    </div>
+     <div>
+      <%= f.label :category_id %>
+      <%= f.number_field :category_id, id: "id_category", class: "id-category", placeholder: "Enter category id" %>
+    </div>
+     <div>
+      <%= f.label :product_id %>
+      <%= f.number_field :product_id, id: "id_product", class: "id-product", placeholder: "Enter product id" %>
+    </div>
+    <div>
+      <%= f.check_box :in_stock, id: "in_stock", class: "in-stock" %>
+      <%= f.label :in_stock %>
+    </div>
+    <div class="wrap-submit">
+      <%= f.submit "Save" %>
+    </div>
+  <% end %>
+</div>

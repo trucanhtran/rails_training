@@ -1,0 +1,14 @@
+// Place all the styles related to the Item controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.wrap-form {
+  display: flex;
+  justify-content: center;
+  .item-form {
+    border: 1px solid blueviolet;
+    padding: 10px;
+  }
+  .wrap-submit {
+    text-align: center;
+  }
+}

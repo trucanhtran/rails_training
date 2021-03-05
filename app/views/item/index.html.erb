@@ -1,0 +1,16 @@
+<div>
+  <div>
+    <% @list_items.each do |item| %>
+      <div><%= item.name %></div>
+      <div><%= item.price %></div>
+    <% end %>
+  </div>
+  <div>
+  <% @products.each do |product| %>
+    <div><%= product.name %></div>
+    <div><%= product.dexcription %></div>
+    <div><%= product.part_number %></div>
+    <div><%= product.price %></div>
+  <% end %>
+  </div>
+</div>
