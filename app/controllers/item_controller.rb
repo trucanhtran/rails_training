@@ -18,4 +18,8 @@ class ItemController < ApplicationController
 
   def delete
   end
+
+  def show
+    @item = ListItem.find_by(id: params[:id])
+  end
 end

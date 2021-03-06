@@ -21,5 +21,13 @@ Rails.application.routes.draw do
   put '/list_items/update', to: 'item#update'
   delete '/list_items/delete', to: 'item#delete'
   get '/list_items/edit', to: 'item#edit'
+  get '/item/:id', to: 'item#show', as: "item_show"
+  #ProductItem
+  get '/product_items', to: 'product_item#index'
+  get '/product_item/new', to: 'product_item#new'
+  get '/product_item/:id', to: 'product_item#show'
+  get '/product_item/edit', to: 'product_item#edit'
+  post '/product_item/create', to: 'product_item#create', as: "product_item_create"
+  put '/product_items/update', to: 'product_item#update'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
