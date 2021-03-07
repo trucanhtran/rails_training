@@ -23,9 +23,10 @@ Rails.application.routes.draw do
   get '/list_items/edit', to: 'item#edit'
   get '/item/:id', to: 'item#show', as: "item_show"
   #ProductItem
-  get '/product_items', to: 'product_item#index'
-  get '/product_item/new', to: 'product_item#new'
+  get '/product_items', to: 'product_item#index', as: "product_item_list"
+  get '/product_item/new', to: 'product_item#new', as: "new_product_item"
   get '/product_item/:id', to: 'product_item#show'
+  delete '/product_item/:id', to: 'product_item#destroy', as: "delete_product_item"
   get '/product_item/edit', to: 'product_item#edit'
   post '/product_item/create', to: 'product_item#create', as: "product_item_create"
   put '/product_items/update', to: 'product_item#update'

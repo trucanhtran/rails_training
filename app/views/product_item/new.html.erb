@@ -1,15 +1,17 @@
 <div>
-  <%= form_with url:product_item_create_path do |f| %>
+  <%= form_with model: @xyz, url: product_item_create_path do |f| %>
     <div>
       <%= f.label :name %>
       <%= f.text_field :name, id: "id-name", class: "name" %>
     </div>
     <div>
       <%= f.label :price %>
-      <%= f.number_field :name, id: "id-price", class: "price" %>
+      <%= f.number_field :price, id: "id-price", class: "price" %>
     </div>
     <div>
       <%= f.submit "Save" %>
     </div>
   <% end %>
 </div>
+
+<%= link_to "Back to list", product_item_list_path %>

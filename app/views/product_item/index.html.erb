@@ -1,11 +1,13 @@
 <div>
-<% @product_items.each do |item| %>
-  <div>
-    <%= item.name %>
-  </div>
-   <div>
-    <%= item.price %>
-  </div>
-<% end %>
-
+  <% @product_items.each do |item| %>
+    <div>
+      <%= item.name %>
+    </div>
+    <div>
+      <%= item.price %>
+    </div>
+    <div><%= link_to "delete", delete_product_item_path(item.id), method: :delete, data: {confirm: "Are you sure ?"} %></div>
+  <% end %>
 </div>
+
+<%= link_to "create", new_product_item_path %>
