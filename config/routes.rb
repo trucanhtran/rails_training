@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'store/index'
+  get 'store/new'
+  get 'store/show'
   root to: "home#index"
   get '/contact/:contact_id/:contact1_id/:contact2_id', to: 'home#contact'
   get '/profile123/:id', to:'home#profile'
@@ -30,5 +33,12 @@ Rails.application.routes.draw do
   get '/product_item/edit', to: 'product_item#edit'
   post '/product_item/create', to: 'product_item#create', as: "product_item_create"
   put '/product_items/update', to: 'product_item#update'
+  #Store
+  get 'store/home', to: 'store#index', as: "store_home_list"
+  get 'store/new', to: 'store#new', as: "store_new1"
+  get 'store/show/:id', to: 'store#show'
+  post 'store/create', to: 'store#create', as: "store_create"
+  put 'store/update', to: 'store#update'
+  delete 'store/destroy', to: 'store#destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

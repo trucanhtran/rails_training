@@ -1,0 +1,16 @@
+<div>
+  <% @item_stores.each do |item| %>
+    <div>
+      <%= item.name %>
+    </div>
+    <div>
+      <%= item.price %>
+    </div>
+    <div>
+      <%= item.category_id %>
+    </div>
+  <% end %>
+  <div>
+    <%= link_to "Create", store_new1_path %>
+  </div>
+</div>
