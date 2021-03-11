@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'book/index'
+  get 'book/new'
+  get 'student/index'
+  get 'student/new'
+  get 'student/show'
   get 'store/index'
   get 'store/new'
   get 'store/show'
@@ -40,5 +45,16 @@ Rails.application.routes.draw do
   post 'store/create', to: 'store#create', as: "store_create"
   put 'store/update', to: 'store#update'
   delete 'store/destroy', to: 'store#destroy'
+  #Student
+  get '/student/home', to: 'student#index', as: "student_home"
+  get '/student/new', to: 'student#new'
+  get '/student/show/:id', to: 'student#show'
+  post '/student/create', to: 'student#create', as: "student_create"
+  #Book
+  get 'book/home',to: 'book#index',as: "book_home"
+  get 'book/new',to: 'book#new', as: "book1_new"
+  get 'book/show/:id',to: 'book#show', as: "book_show"
+  post 'book/create',to: 'book#create',as: "book_create"
+  delete 'book/destroy/:id',to: 'book#destroy', as: "book_destroy"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

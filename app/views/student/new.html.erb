@@ -1,0 +1,23 @@
+<div>
+  <%= form_with model:@new_student, url:student_create_path do |f| %>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name, id: "id_name",class: "name" %>
+    </div>
+     <div>
+      <%= f.label :age %>
+      <%= f.number_field :age, id: "id_age",class: "age" %>
+    </div>
+     <div>
+      <%= f.label :student_id %>
+      <%= f.text_field :student_id, id: "student_id",class: "student-id" %>
+    </div>
+     <div>
+      <%= f.label :class_name %>
+      <%= f.text_field :class_name, id: "id_class",class: "class" %>
+    </div>
+     <div>
+      <%= f.submit :submit %>
+    </div>
+  <% end %>
+</div>

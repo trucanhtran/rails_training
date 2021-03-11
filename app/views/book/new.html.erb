@@ -1,0 +1,16 @@
+<div>
+  <%= form_with model: @book, url: book_create_path do |f| %>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name, id: "id_name", class: "name" %>
+    </div>
+    <div>
+      <%= f.label :author_id %>
+      <%= f.text_field :author_id, id: "author_id", class: "author-id" %>
+    </div>
+    <div>
+      <%= f.submit :submit %>
+    </div>
+  <% end %>
+</div>
+<%= link_to "Home", book_home_path %>

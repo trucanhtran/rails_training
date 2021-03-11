@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_09_142331) do
+ActiveRecord::Schema.define(version: 2021_03_11_142317) do
 
   create_table "admins", force: :cascade do |t|
     t.string "first_name"
@@ -22,8 +22,9 @@ ActiveRecord::Schema.define(version: 2021_03_09_142331) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "kakas", force: :cascade do |t|
-    t.string "name"
+  create_table "books", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "author_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -78,6 +79,15 @@ ActiveRecord::Schema.define(version: 2021_03_09_142331) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_stores_on_category_id"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.string "student_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "class_name"
   end
 
   create_table "users", force: :cascade do |t|
