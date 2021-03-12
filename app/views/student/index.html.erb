@@ -12,5 +12,11 @@
     <div>
       <%= student.class_name %>
     </div>
+    <div>
+      <%= link_to "Click to delete", student_delete_path(student.id), method: :delete, data:{confirm: "Delete?"}  %>
+    </div>
   <% end %>
+</div>
+<div>
+  <%= link_to "Create new", student_new1_path %>
 </div>

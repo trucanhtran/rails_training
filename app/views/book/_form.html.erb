@@ -1,0 +1,15 @@
+<div>
+  <%= form_with model: @book, url: path123 do |f| %>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name, id: "id_name", class: "name" %>
+    </div>
+    <div>
+      <%= f.label :author_id %>
+      <%= f.text_field :author_id, id: "author_id", class: "author-id" %>
+    </div>
+    <div>
+      <%= f.submit :submit %>
+    </div>
+  <% end %>
+</div>

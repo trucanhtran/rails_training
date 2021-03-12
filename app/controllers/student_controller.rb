@@ -17,6 +17,13 @@ class StudentController < ApplicationController
     redirect_to student_home_path
   end
 
+  def destroy
+    Student.find_by(id: params[:id]).destroy
+
+    redirect_to student_home_path
+  end
+
+
   private
   def student_parameter
     params.require(:student).permit(:name, :age, :student_id, :class_name)

@@ -47,14 +47,17 @@ Rails.application.routes.draw do
   delete 'store/destroy', to: 'store#destroy'
   #Student
   get '/student/home', to: 'student#index', as: "student_home"
-  get '/student/new', to: 'student#new'
+  get '/student/new', to: 'student#new', as: "student_new1"
   get '/student/show/:id', to: 'student#show'
   post '/student/create', to: 'student#create', as: "student_create"
+  delete 'student/delete/:id', to: 'student#destroy', as: "student_delete"
   #Book
   get 'book/home',to: 'book#index',as: "book_home"
   get 'book/new',to: 'book#new', as: "book1_new"
   get 'book/show/:id',to: 'book#show', as: "book_show"
+  get 'book/edit/:id',to: 'book#edit', as: "book_edit"
   post 'book/create',to: 'book#create',as: "book_create"
   delete 'book/destroy/:id',to: 'book#destroy', as: "book_destroy"
+  patch 'book/update/:id',to: "book#update", as: "book_update"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
