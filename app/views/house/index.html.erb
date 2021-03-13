@@ -1,0 +1,16 @@
+<div>
+  <% @houses.each do |h| %>
+    <div>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= h.name %></h5>
+          <p class="card-text"><%= h.address %></p>
+          <p class="card-text"><%= h.in_use ? "Rent" : "Available" %></p>
+          <%= link_to "Show", house_show_path(h.id), class: "btn btn-primary" %>
+          <%= link_to "Delete", house_destroy_path(h.id), class: "btn btn-success",method: :delete, data:{confirm:"Delete?" } %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%= link_to "Create", house_new_path, class: "btn btn-outline-info" %>

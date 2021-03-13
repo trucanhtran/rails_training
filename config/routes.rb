@@ -1,12 +1,4 @@
 Rails.application.routes.draw do
-  get 'book/index'
-  get 'book/new'
-  get 'student/index'
-  get 'student/new'
-  get 'student/show'
-  get 'store/index'
-  get 'store/new'
-  get 'store/show'
   root to: "home#index"
   get '/contact/:contact_id/:contact1_id/:contact2_id', to: 'home#contact'
   get '/profile123/:id', to:'home#profile'
@@ -59,5 +51,13 @@ Rails.application.routes.draw do
   post 'book/create',to: 'book#create',as: "book_create"
   delete 'book/destroy/:id',to: 'book#destroy', as: "book_destroy"
   patch 'book/update/:id',to: "book#update", as: "book_update"
+  #House
+  get 'house/home',to: 'house#index',as: "house_home"
+  get 'house/new',to: 'house#new',as: "house_new"
+  get 'house/show/:id',to: 'house#show',as: "house_show"
+  get 'house/edit/:id',to: 'house#edit',as: "house_edit"
+  post 'house/create',to: 'house#create',as: "house_create"
+  delete 'house/destroy/:id',to: 'house#destroy',as: "house_destroy"
+  patch 'house/update/:id',to: 'house#update',as: "house_update"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
