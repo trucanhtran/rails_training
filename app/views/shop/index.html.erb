@@ -1,0 +1,15 @@
+<div>
+  <% @shops.each do |shop|  %>
+    <div>
+      <%= shop.name %>
+    </div>
+    <div>
+      <%= link_to "Show detail", shop_show_path(shop.id) %>
+    </div>
+    <div>
+      <%= link_to "Delete", shop_delete_path(shop.id), method: :delete, data: {confirm: " Delete?"} %>
+    </div>
+  <% end %>
+</div>
+<%= link_to "Add new shop", shop_new_path %>
+<%== pagy_bootstrap_nav(@pagy) %>

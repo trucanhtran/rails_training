@@ -59,5 +59,21 @@ Rails.application.routes.draw do
   post 'house/create',to: 'house#create',as: "house_create"
   delete 'house/destroy/:id',to: 'house#destroy',as: "house_destroy"
   patch 'house/update/:id',to: 'house#update',as: "house_update"
+  #Food
+  get 'food/homepage',to: 'food#index',as: "food_home"
+  get 'food/new',to: 'food#new',as: "food_new"
+  get 'food/show/:id',to: 'food#show', as: "food_show"
+  get 'food/edit/:id',to: 'food#edit', as: "food_edit"
+  post 'food/create', to: 'food#create',as: "food_create"
+  patch 'food/update/:id',to: 'food#update',as: "food_update"
+  delete 'food/destroy/:id',to: 'food#destroy',as: "food_destroy"
+  #Shop
+  get 'shop/home',to: 'shop#index',as: "shop_home"
+  get 'shop/new', to:'shop#new',as: "shop_new"
+  post 'shop/create', to:'shop#create',as: "shop_create"
+  get 'shop/show/:id', to:'shop#show',as: "shop_show"
+  get 'shop/edit/:id', to:'shop#edit',as: "shop_edit"
+  delete 'shop/delete/:id',to: 'shop#delete', as: "shop_delete"
+  patch 'shop/update/:id',to: 'shop#update', as: "shop_update"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

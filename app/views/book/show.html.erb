@@ -4,5 +4,8 @@
 <div>
   <%= @book.author_id %>
 </div>
+<div>
+  <%= @book.image.attached? ? image_tag(@book.image) : "ko co hinh" %>
+</div>
 <%= link_to "Home", book_home_path %>
 <%= link_to "Edit", book_edit_path(@book.id) %>

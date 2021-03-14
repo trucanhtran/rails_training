@@ -1,0 +1,15 @@
+<div>
+  <%= form_with model: @book, url: path do |f| %>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: "Enter name" %>
+    </div>
+    <div>
+      <%= f.label :price %>
+      <%= f.number_field :price, placeholder: "Enter price" %>
+    </div>
+    <div>
+      <%= f.submit "Save" %>
+    </div>
+   <% end %>
+</div>

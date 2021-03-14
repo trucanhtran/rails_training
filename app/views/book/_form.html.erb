@@ -9,6 +9,10 @@
       <%= f.text_field :author_id, id: "author_id", class: "author-id" %>
     </div>
     <div>
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    </div>
+    <div>
       <%= f.submit :submit %>
     </div>
   <% end %>

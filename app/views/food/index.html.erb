@@ -1,0 +1,10 @@
+<div>
+  <% @foods.each do |food| %>
+    <div><%= food.id %></div>
+    <div><%= food.name %></div>
+    <div><%= food.price %></div>
+    <div><%= link_to "Show detail", food_show_path(food.id) %></div>
+    <div><%= link_to "Delete", food_destroy_path(food.id),method: :delete,data: {confirm: "Are you sure?"} %></div>
+  <% end %>
+</div>
+<%= link_to "Create", food_new_path %>

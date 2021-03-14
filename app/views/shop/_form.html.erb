@@ -1,0 +1,23 @@
+<div>
+  <%= form_with model: @shop, url: path do |f| %>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: "Enter name" %>
+    </div>
+    <div>
+      <%= f.label :address %>
+      <%= f.text_field :address, placeholder: "Enter address" %>
+    </div>
+    <div>
+      <%= f.label :description %>
+      <%= f.rich_text_area :description, size: "50x3" %>
+    </div>
+    <div>
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    </div>
+    <div>
+      <%= f.submit "Save" %>
+    </div>
+  <% end %>
+</div>

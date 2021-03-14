@@ -1,0 +1,12 @@
+<div>
+  <%= @shop.name %>
+</div>
+<div>
+  <%= @shop.address %>
+</div>
+<div>
+  <%= @shop.description %>
+</div>
+<div><%= image_tag(@shop.image) %></div>
+<%= link_to "Edit", shop_edit_path(@shop.id) %>
+<%= link_to "Home", shop_home_path %>
