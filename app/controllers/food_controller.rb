@@ -28,7 +28,7 @@ class FoodController < ApplicationController
   end
 
   def update
-    @food.update(name: params[:name], price: params[:price])
+    @food.update(food_parameter)
 
     redirect_to food_show_path(@food.id)
   end
@@ -48,5 +48,3 @@ class FoodController < ApplicationController
     params.require(:food).permit(:name, :price)
   end
 end
-
-
