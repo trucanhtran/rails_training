@@ -4,4 +4,11 @@
 <div>
   <%= @food.price %>
 </div>
-<%= link_to "Edit",food_edit_path(@food.id) %>
+<div>
+  <%= @food.file.attached? ? image_tag(@food.file, alt: "This is image") : "No Image" %>
+</div>
+<div>
+ <%= show_images(@food) %>
+</div>
+<%= link_to "Edit", food_edit_path(@food.id) %>
+<%= link_to "Home", food_home_path %>

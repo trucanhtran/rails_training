@@ -1,5 +1,5 @@
 <div>
-  <%= form_with model: @food, url: path do |f| %>
+  <%= form_with model: @food, url: path, multiple: true do |f| %>
     <div>
       <%= f.label :name %>
       <%= f.text_field :name, placeholder: "Enter name" %>
@@ -7,6 +7,18 @@
     <div>
       <%= f.label :price %>
       <%= f.number_field :price, placeholder: "Enter price" %>
+    </div>
+    <div>
+      <%= f.label :description %>
+      <%= f.rich_text_area :description, placeholder: "Write something" %>
+    </div>
+    <div>
+      <%= f.label :file %>
+      <%= f.file_field :file %>
+    </div>
+    <div>
+      <%= f.label :files %>
+      <%= f.file_field :files, multiple: true %>
     </div>
     <div>
       <%= f.submit "Save" %>
