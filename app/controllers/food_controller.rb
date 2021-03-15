@@ -17,7 +17,7 @@ class FoodController < ApplicationController
   end
 
   def create
-    @food = Food.new(name: params[:name], price: params[:price])
+    @food = Food.new(food_parameter)
     @food.save
 
     redirect_to food_home_path
