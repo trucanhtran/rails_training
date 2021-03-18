@@ -1,0 +1,17 @@
+<div>
+  <% @categories.each do |category| %>
+    <div>
+      <%= category.name %>
+    </div>
+    <div>
+      <%= category.price %>
+    </div>
+    <div>
+      <%= link_to "Show detail", category_show_path(category.id) %>
+    </div>
+    <div>
+      <%= link_to "Delete", category_delete_path(category.id), method: :delete, data: {confirm: "Are you sure?"} %>
+    </div>
+  <% end %>
+</div>
+<%= link_to "New", category_new_path %>

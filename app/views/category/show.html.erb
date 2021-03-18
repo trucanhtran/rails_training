@@ -1,0 +1,14 @@
+<div>
+  <%= @category.name %>
+</div>
+<div>
+  <%= @category.price %>
+</div>
+<div>
+  <%= raw(@category.description) %>
+</div>
+<div>
+  <%= @category.image.attached? ? image_tag(@category.image) : "no image" %>
+</div>
+<%= link_to "Edit", category_edit_path(@category.id) %>
+<%= link_to "Home" , category_index_path %>

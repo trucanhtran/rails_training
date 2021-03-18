@@ -1,0 +1,23 @@
+<div>
+  <%= form_with model: @category, url: path do |f| %>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name, id: "id_name" %>
+    </div>
+     <div>
+      <%= f.label :price %>
+      <%= f.number_field :price, id: "id_price" %>
+    </div>
+    <div>
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    </div>
+    <div>
+      <%= f.label :description %>
+      <%= f.rich_text_area :description %>
+    </div>
+    <div>
+      <%= f.submit "Save" %>
+    </div>
+  <% end %>
+</div>
