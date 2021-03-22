@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'category/index'
+  root to: 'category#index', as: "category_index"
   get 'category/new', to: 'category#new', as: 'category_new'
   get 'category/show/:id', to: 'category#show', as: 'category_show'
   get 'category/edit/:id', to: 'category#edit', as: 'category_edit'
