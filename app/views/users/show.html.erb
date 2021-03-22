@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @user.password %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @user.sex == false ? "male" : "female" %>
+</p>
+
+
+<p>
+  <strong>Country:</strong>
+  <% if @user.country == 0 %>
+    <%= "VietNam" %>
+  <% elsif @user.country == 1%>
+    <%= "Japan" %>
+  <% else %>
+  <%= "China" %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
