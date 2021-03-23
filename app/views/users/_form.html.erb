@@ -38,6 +38,11 @@
     <%= form.select :country, [["VietNam", 0 ], ["Japna", 1 ], ["China", 3 ]] %>
   </div>
 
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
