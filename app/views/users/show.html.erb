@@ -34,7 +34,7 @@
 
 <p>
   <strong>Image</strong>
-  <%= @user.image.attached? ? @user.image : "No image" %>
+  <%= @user.image.attached? ? image_tag(@user.image, alt: "this is image") : "No image" %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
