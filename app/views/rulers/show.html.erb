@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ruler.name %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @ruler.color %>
+</p>
+
+<p>
+  <strong>Lenght:</strong>
+  <%= @ruler.lenght %>
+</p>
+
+<%= link_to 'Edit', edit_ruler_path(@ruler) %> |
+<%= link_to 'Back', rulers_path %>
