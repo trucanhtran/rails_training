@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @apple.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @apple.price %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @apple.description %>
+</p>
+
+<%= link_to 'Edit', edit_apple_path(@apple) %> |
+<%= link_to 'Back', apples_path %>

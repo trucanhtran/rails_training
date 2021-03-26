@@ -1,0 +1,28 @@
+<div>
+  <%= form_with(model: apple, url: path) do |f| %>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name, id: "id_name" %>
+    </div>
+    <div>
+      <%= f.label :price %>
+      <%= f.number_field :price, id: "id_price" %>
+    </div>
+    <div>
+      <%= f.label :description %>
+      <%= f.text_area :description, id: "id_description" %>
+    </div>
+    <div>
+      <%= f.label :height %>
+      <%= f.number_field :height, id: "id_height" %>
+    </div>
+     <div>
+      <%= f.label :weight %>
+      <%= f.number_field :weight, id: "id_weight" %>
+    </div>
+     <div>
+      <%= f.label :submit %>
+      <%= f.submit "Submit" %>
+    </div>
+  <% end %>
+</div>
