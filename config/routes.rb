@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  root to: "teachers#index"
+  root to: "categories#index"
+
+  resources :categories do
+    resources :products
+  end
+
 
   resources :teachers do
     resources :students
