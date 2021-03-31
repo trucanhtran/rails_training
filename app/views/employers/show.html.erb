@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @employer.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @employer.age %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @employer.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @employer.phone %>
+</p>
+
+<p>
+  <strong>Employees:</strong>
+  <% @employer.employees.each do |employee| %>
+    <%= link_to employee.id, employer_employee_path(@employer, employee.id) %>
+  <% end %>
+</p>
+<%= link_to 'New Employee', new_employer_employee_path(@employer) %> |
+<%= link_to 'Edit', edit_employer_path(@employer) %> |
+<%= link_to 'Back', employers_path %>
