@@ -24,11 +24,11 @@
 <p>
   <strong>Students:</strong>
   <% @subject.students&.each do |student| %>
-    <%= student.name %>
+    <%= link_to student.name, subject_student_path(@subject,student.id) %>
   <% end %>
 </p>
 
 
-<%= link_to 'New student',  new_subject_student_path(@subject,@student) %> |
+<%= link_to 'New student',  new_subject_student_path(@subject) %> |
 <%= link_to 'Edit', edit_subject_path(@subject) %> |
 <%= link_to 'Back', subjects_path %>

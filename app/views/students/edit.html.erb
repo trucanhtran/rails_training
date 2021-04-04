@@ -1,6 +1,6 @@
 <h1>Editing Student</h1>
 
-<%= render 'form', student: @student %>
+<%= render 'form', student: @student, path: subject_student_path(@subject, @student) %>
 
-<%= link_to 'Show', @student %> |
-<%= link_to 'Back', students_path %>
+<%= link_to 'Show',  subject_student_path(@subject, @student) %> |
+<%= link_to 'Back', subject_path(@subject) %>

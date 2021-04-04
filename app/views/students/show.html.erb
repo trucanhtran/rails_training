@@ -25,5 +25,8 @@
   <%= @student.bio %>
 </p>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+
+<%= link_to 'Destroy', subject_student_path(@subject, @student),
+method: :delete, data: {confirm: "Are you sure?"} %>
+<%= link_to 'Edit', edit_subject_student_path(@subject,@student ) %> |
+<%= link_to 'Back', subject_path(@subject) %>
