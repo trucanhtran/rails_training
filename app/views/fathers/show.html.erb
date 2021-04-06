@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @father.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @father.age %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @father.description %>
+</p>
+
+<p>
+  <strong>Sons:</strong>
+    <% @father.sons&.each do |son| %>
+      <%= link_to son.id,  father_son_path(@father, son.id) %>
+      <%= link_to "Destroy #{son.id}",  father_son_path(@father, son.id), method: :delete, data: {confirm: "Are you sure?"} %>
+    <% end %>
+
+</p>
+
+<%= link_to "New Children", new_father_son_path(@father) %> |
+<%= link_to 'Edit', edit_father_path(@father) %> |
+<%= link_to 'Back', fathers_path %>

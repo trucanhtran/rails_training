@@ -1,0 +1,6 @@
+<h1>Editing Son</h1>
+
+<%= render 'form', son: @son, path: father_son_path(@father,@son) %>
+
+<%= link_to 'Show', father_son_path(@father) %> |
+<%= link_to 'Back', father_path(@father) %>
