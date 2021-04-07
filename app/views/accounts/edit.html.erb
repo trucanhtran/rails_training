@@ -1,0 +1,6 @@
+<h1>Editing Account</h1>
+
+<%= render 'form', account: @account, path: supplier_account_path(@supplier,@account) %>
+
+<%= link_to 'Show', suppliers_path %> |
+<%= link_to 'Back', supplier_account_path(@supplier) %>
