@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @stock.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @stock.description %>
+</p>
+
+
+<p>
+  <strong>Seeds:</strong>
+  <% @stock.seeds&.each do |seed|   %>
+    <%= link_to seed.name, stock_seed_path(@stock, seed.id) %>
+    <%= link_to "Destroy seed", stock_seed_path(@stock, seed.id), method: :delete, data: {confirm: "Are you sure?"} %>
+  <% end %>
+</p>
+
+
+<%= link_to 'New Seed', new_stock_seed_path(@stock) %>
+<%= link_to 'Edit', edit_stock_path(@stock) %> |
+<%= link_to 'Back', stocks_path %>

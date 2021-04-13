@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @seed.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @seed.description %>
+</p>
+
+<p>
+  <strong>In stock:</strong>
+  <%= @seed.in_stock %>
+</p>
+
+<%= link_to 'Edit', edit_stock_seed_path(@stock, @seed) %> |
+<%= link_to 'Back', stock_path(@stock) %>
