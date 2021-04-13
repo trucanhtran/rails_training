@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @student.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @student.age %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @student.phone %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @student.address %>
+</p>
+
+<% if @student.record.present? %>
+<p>
+  <strong>Record:</strong>
+  <%= link_to @student.record&.course, student_record_path(@student, @student.record) %>
+</p>
+<% end %>
+
+<% if !@student.record.present? %>
+  <%= link_to 'New Record',  new_student_record_path(@student) %> |
+<% else %>
+  <%= link_to 'Destroy Record',  student_record_path(@student, @student.record), method: :delete, confirm: {data: "Are you sure?"} %> |
+<% end %>
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>
