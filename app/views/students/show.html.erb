@@ -15,5 +15,15 @@
   <%= @student.phone %>
 </p>
 
+<p>
+  <strong>Record: </strong>
+  <% if @student.record.present?%>
+    <%= @student.record&.course %>
+  <% else %>
+    <%= link_to 'Create New Record',  new_student_record_path(@student, @student.record) %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<%= link_to 'List Students', students_path %> |
+<%= link_to 'Back To Teacher', teacher_path(@student.teacher) %>

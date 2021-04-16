@@ -1,5 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: %i[ show edit update destroy ]
+  before_action :set_teacher_students, only: %i[ create show edit update destroy ]
+
 
   # GET /students or /students.json
   def index
@@ -12,7 +14,8 @@ class StudentsController < ApplicationController
 
   # GET /students/new
   def new
-    @student = Student.new
+    @teacher = Teacher.find_by(id: params[:teacher_id])
+    @student = @teacher.students.new
   end
 
   # GET /students/1/edit
@@ -21,11 +24,11 @@ class StudentsController < ApplicationController
 
   # POST /students or /students.json
   def create
-    @student = Student.new(student_params)
+    @student = @teacher.students.new(student_params)
 
     respond_to do |format|
       if @student.save
-        format.html { redirect_to @student, notice: "Student was successfully created." }
+        format.html { redirect_to teacher_path(@teacher), notice: "Student was successfully created." }
         format.json { render :show, status: :created, location: @student }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -59,7 +62,11 @@ class StudentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_student
-      @student = Student.find(params[:id])
+      @student = Student.find_by(id: params[:id])
+    end
+
+    def set_teacher_students
+      @teacher = Teacher.find_by(id: params[:teacher_id])
     end
 
     # Only allow a list of trusted parameters through.

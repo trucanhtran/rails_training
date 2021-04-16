@@ -1,4 +1,4 @@
 class Record < ApplicationRecord
   belongs_to :student
-  validates :course, :grade, numericality: {on;y_integer: true}
+  validates :course, :grade, numericality: {only_integer: true}
 end

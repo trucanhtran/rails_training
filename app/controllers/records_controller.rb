@@ -1,5 +1,6 @@
 class RecordsController < ApplicationController
   before_action :set_record, only: %i[ show edit update destroy ]
+  before_action :set_student_record, only: %i[ create]
 
   # GET /records or /records.json
   def index
@@ -12,6 +13,7 @@ class RecordsController < ApplicationController
 
   # GET /records/new
   def new
+    @student = Student.find_by(id: params[:student_id])
     @record = Record.new
   end
 
@@ -21,11 +23,11 @@ class RecordsController < ApplicationController
 
   # POST /records or /records.json
   def create
-    @record = Record.new(record_params)
+    @record = @student.build_record(record_params)
 
     respond_to do |format|
       if @record.save
-        format.html { redirect_to @record, notice: "Record was successfully created." }
+        format.html { redirect_to student_path(@student), notice: "Record was successfully created." }
         format.json { render :show, status: :created, location: @record }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -60,6 +62,10 @@ class RecordsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_record
       @record = Record.find(params[:id])
+    end
+
+    def set_student_record
+      @student = Student.find_by(id: params[:student_id])
     end
 
     # Only allow a list of trusted parameters through.
