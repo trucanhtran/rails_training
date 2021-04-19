@@ -15,5 +15,13 @@
   <%= @student.phone %>
 </p>
 
+<p>
+  <strong>Records:</strong>
+  <% @student.records&.each do |record| %>
+    <%= link_to record.grade, student_record_path(@student) %>
+  <% end %>
+</p>
+
+<%= link_to 'Add new record',  new_student_record_path(@student) %> |
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>

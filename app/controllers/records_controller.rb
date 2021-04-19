@@ -1,5 +1,6 @@
 class RecordsController < ApplicationController
   before_action :set_record, only: %i[ show edit update destroy ]
+  before_action :set_student_records, only: %i[create show edit update destroy ]
 
   # GET /records or /records.json
   def index
@@ -12,20 +13,25 @@ class RecordsController < ApplicationController
 
   # GET /records/new
   def new
-    @record = Record.new
+    @teachers = Teacher.all
+    @student = Student.find_by(id: params[:student_id])
+    @record = @student.records.new
   end
 
   # GET /records/1/edit
   def edit
+    @teachers = Teacher.all
   end
 
   # POST /records or /records.json
   def create
-    @record = Record.new(record_params)
+
+   @student = Student.find_by(id: params[:student_id])
+   @record = @student.records.new(record_params)
 
     respond_to do |format|
       if @record.save
-        format.html { redirect_to @record, notice: "Record was successfully created." }
+        format.html { redirect_to student_path(@student), notice: "Record was successfully created." }
         format.json { render :show, status: :created, location: @record }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -36,9 +42,11 @@ class RecordsController < ApplicationController
 
   # PATCH/PUT /records/1 or /records/1.json
   def update
+    @teachers = Teacher.all
+
     respond_to do |format|
       if @record.update(record_params)
-        format.html { redirect_to @record, notice: "Record was successfully updated." }
+        format.html { redirect_to  student_record_path(@student), notice: "Record was successfully updated." }
         format.json { render :show, status: :ok, location: @record }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -59,11 +67,15 @@ class RecordsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_record
-      @record = Record.find(params[:id])
+      @record = Record.find_by(id: params[:id])
+    end
+
+    def set_student_records
+      @student = Student.find_by(id: params[:student_id])
     end
 
     # Only allow a list of trusted parameters through.
     def record_params
-      params.require(:record).permit(:course, :grade)
+      params.require(:record).permit(:course, :grade, :teacher_id)
     end
 end

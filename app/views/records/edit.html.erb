@@ -1,6 +1,6 @@
 <h1>Editing Record</h1>
 
-<%= render 'form', record: @record %>
+<%= render 'form', record: @record, path: student_record_path(@student, @record), teachers: @teachers %>
 
-<%= link_to 'Show', @record %> |
-<%= link_to 'Back', records_path %>
+<%= link_to 'Show', student_record_path(@student, @record) %> |
+<%= link_to 'Back to student', student_path(@student) %>
