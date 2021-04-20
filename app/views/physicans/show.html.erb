@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @physican.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @physican.age %>
+</p>
+
+<p>
+  <strong>No.Appoinments:</strong>
+  <%= @physican.appoinments&.size %>
+</p>
+
+
+<p>
+  <strong>Patient:</strong>
+  <% @physican.appoinments&.each do |appoinment| %>
+    <%= appoinment.patient&.name %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_physican_path(@physican) %> |
+<%= link_to 'Back', physicans_path %>

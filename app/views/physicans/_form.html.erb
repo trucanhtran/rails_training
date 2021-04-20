@@ -1,0 +1,32 @@
+<%= form_with(model: physican) do |form| %>
+  <% if physican.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(physican.errors.count, "error") %> prohibited this physican from being saved:</h2>
+
+      <ul>
+        <% physican.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.text_field :age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :patient_id %>
+    <%= form.collection_select :patient_id, patients, :id, :name, include_blank: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
