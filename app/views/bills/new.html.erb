@@ -1,5 +1,5 @@
 <h1>New Bill</h1>
 
-<%= render 'form', bill: @bill %>
+<%= render 'form', bill: @bill, path: customer_bills_path(@customer), product_name: @products  %>
 
-<%= link_to 'Back', bills_path %>
+<%= link_to 'Back', customers_path(@customer) %>

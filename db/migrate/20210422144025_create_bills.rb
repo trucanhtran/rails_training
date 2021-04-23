@@ -1,7 +1,7 @@
 class CreateBills < ActiveRecord::Migration[6.1]
   def change
     create_table :bills do |t|
-      t.timestamps :date
+      t.timestamp :date
       t.belongs_to :customer
       t.belongs_to :product
 

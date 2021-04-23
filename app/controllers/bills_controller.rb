@@ -12,7 +12,9 @@ class BillsController < ApplicationController
 
   # GET /bills/new
   def new
+    @products = Product.all
     @bill = Bill.new
+    @customer = Customer.find_by(id: params[:customer_id])
   end
 
   # GET /bills/1/edit
@@ -21,11 +23,13 @@ class BillsController < ApplicationController
 
   # POST /bills or /bills.json
   def create
-    @bill = Bill.new(bill_params)
+    @products = Product.all
+    @customer = Customer.find_by(id: params[:customer_id])
+    @bill = @customer.bills.new(bill_params)
 
     respond_to do |format|
       if @bill.save
-        format.html { redirect_to @bill, notice: "Bill was successfully created." }
+        format.html { redirect_to customers_path(@customer), notice: "Bill was successfully created." }
         format.json { render :show, status: :created, location: @bill }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -59,11 +63,11 @@ class BillsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_bill
-      @bill = Bill.find(params[:id])
+      @bill = Bill.find_by(id: params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def bill_params
-      params.require(:bill).permit(:date)
+      params.require(:bill).permit(:date, :product_id)
     end
 end

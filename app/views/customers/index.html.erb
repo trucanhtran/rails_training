@@ -7,7 +7,8 @@
     <tr>
       <th>Name</th>
       <th>Phone</th>
-      <th colspan="3"></th>
+      <th>No.Bills</th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -16,8 +17,10 @@
       <tr>
         <td><%= customer.name %></td>
         <td><%= customer.phone %></td>
+        <td><%= customer.bills&.size %></td>
         <td><%= link_to 'Show', customer %></td>
         <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+        <td><%= link_to 'New Bill',  new_customer_bill_path(customer) %></td>
         <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -27,3 +30,4 @@
 <br>
 
 <%= link_to 'New Customer', new_customer_path %>
+<%= link_to 'Product List', products_path %>
