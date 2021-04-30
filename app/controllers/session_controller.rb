@@ -3,6 +3,8 @@ class SessionController < ApplicationController
   end
 
   def logout
+    session.delete(:user_id)
+    redirect_to login_path
   end
 
   def create
