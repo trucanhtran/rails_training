@@ -8,7 +8,7 @@ class SessionController < ApplicationController
   end
 
   def create
-    @user = User.find_by(email: session_param[:email])
+    @user = User.find_by(email: session_pa ram[:email])
     if @user.present? && @user.authenticate(session_param[:password])
       session[:user_id] = @user.id
       redirect_to root_path, notice: 'dang nhap thanh cong'
