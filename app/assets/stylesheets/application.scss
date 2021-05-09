@@ -1,0 +1,16 @@
+@import "bootstrap";
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin-top: 30px;
+}
+.container .btn-block {
+  padding-left: 12px;
+  margin: 48px 12px;
+}
+.btn {
+  min-width: 300px;
+  font-size: 18px;
+}
