@@ -1,0 +1,36 @@
+
+<%= form_with url: create_path do |form| %>
+  <div class="field mb-3">
+    <%= form.label :email, class: "form-label"  %>
+    <%= form.text_field :email, class: "form-control"%>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :password, class: "form-label"  %>
+    <%= form.password_field :password, class: "form-control" %>
+  </div>
+
+
+  <div class= "flash">
+    <% flash.each do |key,value|  %>
+      <div class= "flash-<%= key %>">
+        <%= value %>
+      </div>
+    <% end %>
+  </div>
+
+
+  <div class="actions">
+      <%= form.submit 'Login', class: "btn btn-primary" %>
+  </div>
+
+    <div class="actions">
+      <%= link_to 'Or Signup?', signup_path %>
+    </div>
+
+
+
+   <div class="actions">
+    <%= link_to 'Forgot Password?', "#"%>
+  </div>
+<% end %>
