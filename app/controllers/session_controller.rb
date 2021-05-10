@@ -3,9 +3,6 @@ class SessionController < ApplicationController
     @user = User.find_by(id: session[:user_id])
   end
 
-  def signup
-  end
-
   def login
   end
 
