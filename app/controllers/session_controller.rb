@@ -1,5 +1,6 @@
 class SessionController < ApplicationController
   def index
+    @user = User.find_by(id: session_params[])
   end
 
   def signup
@@ -21,10 +22,15 @@ class SessionController < ApplicationController
     end
   end
 
+  def logout
+    session.clear
+    redirect_to root_path, notice: "Log Out Successfully"
+  end
+
   private
 
   def session_params
-    params.permit(:email, :password)
+    params.permit(:email, :password, :avatar)
   end
 
 end

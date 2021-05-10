@@ -5,7 +5,19 @@
     <div class = "btn-block">
       <%= link_to 'Login', login_path, class: "btn btn-primary btn-login" %>
     </div>
+     </div>
+    <% flash.each do |key,value|  %>
+      <div class= "flash flash-<% key %>">
+        <%= value %>
+      </div>
+    <% end %>
   <% else %>
+  <div>
+
+  </div>
+  <div class = "btn-block">
+    <%= link_to 'Log Out', logout_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary btn-logout" %>
+  </div>
     <% flash.each do |key,value|  %>
       <div class= "flash flash-<% key %>">
         <%= value %>
