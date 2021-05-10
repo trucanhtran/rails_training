@@ -3,14 +3,34 @@
 .container {
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   margin-top: 30px;
 }
 .container .btn-block {
   padding-left: 12px;
-  margin: 48px 12px;
+  margin: 18px 12px;
 }
 .btn {
   min-width: 300px;
   font-size: 18px;
+  border-radius: 40px;
+}
+
+.card .card-body {
+  margin: auto;
+}
+.card .img-avatar {
+  border-radius: 100px;
+}
+.card .card-profile {
+  margin-top: 24px;
+  margin-left: 24px;
+  min-width: 100%;
+}
+.card .card-profile div + div {
+  padding-top: 8px;
+}
+
+.card .card-profile span {
+  font-weight: bold;
 }

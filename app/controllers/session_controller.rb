@@ -1,6 +1,6 @@
 class SessionController < ApplicationController
   def index
-    @user = User.find_by(id: session_params[])
+    @user = User.find_by(id: session[:user_id])
   end
 
   def signup
