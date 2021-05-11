@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'session#index'
-  resources :users
+  get 'list_users', to: 'users#index', as: 'list_users'
+  resources :users, except: [:index]
   get 'signup', to: 'users#new'
   get 'login', to: 'session#login'
   post 'create', to: 'session#create'
