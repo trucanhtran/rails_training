@@ -1,15 +1,5 @@
 <%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
     <div class="field mb-3">
         <%= form.label :name, class: "form-label"  %>
         <%= form.text_field :name, class: "form-control" %>
@@ -27,15 +17,27 @@
 
     <div class="field mb-3">
       <%= form.label :phone, class: "form-label"  %>
-      <%= form.number_field :phone, class: "form-control" %>
+      <%= form.telephone_field :phone, :value => @user.phone, class: "form-control" %>
     </div>
+
+     <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2 class= "flash flash-errors"><%= pluralize(user.errors.count, "error") %> prohibited this user from creating account:</h2>
+
+      <ul class= "flash flash-errors">
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
     <div class="actions">
       <%= form.submit 'Create Account', class: "btn btn-primary" %>
     </div>
 
     <div class="actions">
-    <%= link_to 'Has Account? Login', login_path %>
-  </div>
+      <%= link_to 'Has Account? Login', login_path %>
+    </div>
 
   <% end %>
