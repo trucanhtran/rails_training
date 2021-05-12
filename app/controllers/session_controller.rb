@@ -6,6 +6,17 @@ class SessionController < ApplicationController
   def login
   end
 
+  def showPassword
+  end
+
+  def updatePassword
+
+  end
+
+  def showProfile
+    @user = User.find_by(id: session[:user_id])
+  end
+
   def create
     @user = User.find_by(email: session_params[:email])
     if @user.present? && @user.authenticate(session_params[:password])

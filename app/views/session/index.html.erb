@@ -1,3 +1,7 @@
+ <div id= "nav"> <%= render 'header' %> </div>
+
+
+<div class= "btn-group">
   <% if has_login? === false %>
     <div class = "btn-block">
       <%= link_to 'Sign Up', new_user_path, class: "btn btn-primary btn-signup" %>
@@ -13,26 +17,11 @@
     <% end %>
   <% else %>
     <div class="card">
-      <div class="card-body">
-        <%= @user.avatar.attached? ?  image_tag(@user.avatar, size: '200', class: "img img-avatar" )  :  image_tag("/assets/avatar.png", size: '200', class: "img img-avatar" )%>
-      </div>
       <div class= "card-profile">
           <div>
-            <span>Name:</span>
-            <%= @user.name %>
-          </div>
-          <div>
-            <span>Email:</span>
-            <%= @user.email %>
-          </div>
-          <div>
-            <span>Phone:</span>
-            <%= @user.phone %>
+            <%=link_to @user.name, profile_path %>
           </div>
         </div>
-      <div class = "btn-block">
-        <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-primary btn-edit" %>
-      </div>
       <div class = btn-block>
         <%= link_to 'Log Out', logout_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary btn-logout" %>
       </div>
@@ -44,3 +33,4 @@
       </div>
     <% end %>
   <% end %>
+</div>
