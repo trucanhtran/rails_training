@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :products
   root to: 'session#index'
   get 'list_users', to: 'users#index', as: 'list_users'
   resources :users, except: [:index]
