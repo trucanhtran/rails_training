@@ -1,4 +1,4 @@
-
+<div class= "container form">
 <%= form_with(model: @user) do |form| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -36,7 +36,8 @@
     </div>
 
     <div class="actions">
-    <%= link_to 'Change Password?', login_path %>
+    <%= link_to 'Change Password?', change_password_path %>
     </div>
 
   <% end %>
+</div>
