@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   get 'login', to: 'session#login'
   post 'create', to: 'session#create'
   delete 'logout', to: 'session#logout'
+  get 'change_password', to: 'session#showPassword'
+  post 'change_password', to: 'session#updatePassword'
+  get 'profile', to: 'session#showProfile'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
