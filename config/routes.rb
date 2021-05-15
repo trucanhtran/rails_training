@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   get 'login', to: 'session#login'
   post 'create', to: 'session#create'
   delete 'logout', to: 'session#logout'
+  get 'contact', to: 'users#contact'
+  post 'contact', to: 'users#send_email'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
