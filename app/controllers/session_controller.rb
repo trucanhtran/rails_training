@@ -24,6 +24,16 @@ class SessionController < ApplicationController
     redirect_to root_path, notice: "Log Out Successfully"
   end
 
+  def contact
+
+  end
+
+  def send_email
+    UserMailer.send_email_to_user(params).deliver_now
+    redirect_to root_path, notice: "Email has been sent"
+  end
+
+
   private
 
   def session_params
