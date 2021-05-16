@@ -1,0 +1,4 @@
+<div>
+  <%= @email %>
+  <%= link_to "reset password", new_password_url + "?token=#{@token}" %>
+</div>

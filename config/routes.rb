@@ -9,5 +9,9 @@ Rails.application.routes.draw do
   get 'change_password', to: 'session#showPassword'
   post 'change_password', to: 'session#updatePassword'
   get 'profile', to: 'session#showProfile'
+  get 'reset_password', to: 'users#forgot_password'
+  post 'reset_password', to: 'users#reset_password'
+  get 'new_password', to: 'users#new_password'
+  post 'new_password', to: 'users#update_password'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -57,6 +57,32 @@ class UsersController < ApplicationController
     end
   end
 
+  def forgot_password
+
+  end
+
+  def reset_password
+    user = User.find_by(email: params[:email])
+    if user.present?
+      token = ([*('A'..'Z'),*('0'..'9')]-%w(0 1 I O)).sample(8).join
+      user.token = token
+      user.save
+
+      UserMailer.send_email_to_user(params, token).deliver_now
+      notice_msg = "gui email thanh cong"
+    else
+      notice_msg = "gui email that bai, hoac sai email, nhap lai"
+    end
+    redirect_to root_path, notice: notice_msg
+  end
+
+  def new_password
+    @token = params[:token]
+  end
+
+  def update_password
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
