@@ -1,0 +1,4 @@
+var divElement = document.createElement("div");
+var textNode = document.createTextNode("<%= @product.name %>")
+divElement.appendChild(textNode);
+document.getElementById("hihi").appendChild(divElement);

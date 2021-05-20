@@ -1,0 +1,22 @@
+<%= form_with(model: @product, url: create_product_path, local: false) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :phone %>
+    <%= form.number_field :phone %>
+  </div>
+
+   <div>
+    <%= form.label :des %>
+    <%= form.text_area :des %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<div id="hihi"></div>

@@ -1,0 +1,9 @@
+<div>
+<% @products.each do |product| %>
+  <%= product.name %>
+  <%= product.phone %>
+  <%= product.des %>
+<% end %>
+</div>
+
+<%= link_to 'Back', new_product_path %>
