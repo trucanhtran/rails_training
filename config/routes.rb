@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'session#index'
+   root to: 'session#index'
+
   get 'list_users', to: 'users#index', as: 'list_users'
   resources :users, except: [:index]
   get 'signup', to: 'users#new'
@@ -9,5 +10,8 @@ Rails.application.routes.draw do
   get 'change_password', to: 'session#showPassword'
   post 'change_password', to: 'session#updatePassword'
   get 'profile', to: 'session#showProfile'
+  get 'book_index', to:'book#index'
+  get 'book_new', to: 'book#new'
+  post 'book_create', to: 'book#create'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,18 @@
+<%= form_with(model: book, url: path, local: false) do |form| %>
+
+  <div class="field mb-3">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+   <div class="field mb-3">
+    <%= form.label :des %>
+    <%= form.text_area :des %>
+  </div>
+
+   <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<div id="content"></div>

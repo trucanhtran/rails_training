@@ -8,6 +8,11 @@
     <div class="btn-block">
       <%= link_to 'Login', login_path, class: "btn btn-primary btn-login" %>
     </div>
+     <div class="btn-block">
+      <%= link_to 'Create New Book', book_new_path, class: "btn btn-primary btn-login", remote: true %>
+      <div id="id_form_new_book"></div>
+      <div id="content"></div>
+    </div>
     <div class="flash">
       <% flash.each do |key,value|  %>
         <div class= "flash flash-<% key %>">

@@ -1,0 +1,4 @@
+var node = document.createElement("div");
+var textNode = document.createTextNode("<%= @book.name %>");
+ node.appendChild(textNode);
+document.getElementById("content").appendChild(node);
