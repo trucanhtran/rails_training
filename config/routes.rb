@@ -9,5 +9,8 @@ Rails.application.routes.draw do
   get 'change_password', to: 'session#showPassword'
   post 'change_password', to: 'session#updatePassword'
   get 'profile', to: 'session#showProfile'
+  get 'new_product', to: 'ajax#new'
+  post 'new_product', to: 'ajax#create'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

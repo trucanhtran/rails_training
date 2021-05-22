@@ -1,0 +1,4 @@
+var node = document.createElement("div")
+var textNode = document.createTextNode("<%= @product.name %>")
+node.appendChild(textNode)
+document.getElementById("id_product_display").appendChild(node)
