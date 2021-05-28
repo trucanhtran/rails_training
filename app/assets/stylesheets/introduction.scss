@@ -2,9 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.introduction {
-  color: red;
-}
 .title img {
   border-radius: 150px;
+}
+
+.content img {
+  border-radius: 300px;
+}
+
+.about_us {
+  text-align: center;
+}
+
+.about_us .content {
+  line-height: 32px;
 }
