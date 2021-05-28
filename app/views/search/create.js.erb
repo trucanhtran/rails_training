@@ -1,0 +1,13 @@
+document.getElementById("id_books_list").innerHTML = "";
+var bookArray = [];
+
+<% @books.each do |book| %>
+  bookArray.push(book)
+<% end %>
+
+for (var i = 0, i <bookArray.length, i++)
+
+var node = document.createElement("div");
+var textNode = document.createTextNode(bookArray[i]);
+node.appendChild(textNode);
+document.getElementById("id_books_list").appendChild(node)

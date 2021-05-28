@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-   root to: 'session#index'
+  root to: 'session#index'
   get 'list_users', to: 'users#index', as: 'list_users'
   resources :users, except: [:index]
   get 'signup', to: 'users#new'
@@ -13,5 +13,10 @@ Rails.application.routes.draw do
   get 'profile', to: 'session#showProfile'
   #About us
   get 'about_us', to: 'introduction#show'
+  #Search
+  get 'search', to: 'search#new'
+  post 'search', to: 'search#create'
+  #Book controller
+  resources :books
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
