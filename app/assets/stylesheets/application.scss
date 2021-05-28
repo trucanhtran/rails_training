@@ -1,12 +1,14 @@
 @import "bootstrap";
+@import "introduction";
 
 * {
   margin: 2px;
   box-sizing: border-box;
 }
 
-.container-fluid #nav {
+#nav {
   padding: 1px;
+  justify-content: left;
 }
 
 .container-fluid .form,

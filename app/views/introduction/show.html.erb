@@ -1,0 +1,31 @@
+<div id="nav"> <%= render 'session/header', user: @user %> </div>
+
+  <div class="about_us introduction">
+    <div class="title introduction-tittle">
+      <h1>Introduction</h1>
+      <%= image_tag 'about_us.jpg', width: '300px'%>
+    </div>
+    <div class="content introduction-content">
+      <p>
+        Hello, My name is Anh.
+        I'm studying at University Economic and Law.
+        This is my first demo website written by Ruby On Rails.
+      </p>
+    </div>
+  </div>
+
+  <div class="about_us contact">
+    <div class="title contact-tittle">
+      <h1>Contact</h1>
+    </div>
+    <div class="content contact-content">
+      <p>
+        How can you contact me?
+      </p>
+      <%= image_tag 'email.png', height: '300px'%>
+      <p>anhttt18411@st.uel.edu.vn</p>
+      <h2>OR</h2>
+      <%= image_tag 'github.png', height: '300px'%>
+      <p>https://github.com/trucanhtran</p>
+    </div>
+  </div>
