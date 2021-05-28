@@ -1,0 +1,16 @@
+document.getElementById('id_list_products').innerHTML = ""
+
+var productList = [];
+
+<% @products.each do |product| %>
+  productList.push("<%= product.name %>");
+<% end %>
+
+console.log(productList);
+
+for (var i = 0; i < productList.length; i++){
+  var node = document.createElement("div")
+  var textNode = document.createTextNode(productList[i])
+  node.appendChild(textNode)
+  document.getElementById('id_list_products').appendChild(node)
+}

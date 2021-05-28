@@ -1,0 +1,16 @@
+<%= form_with(model:product, url: path, local: false) do |form| %>
+  <div class="field-mb3">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field-mb3">
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div>
+    <%= form.submit 'Submit' %>
+  </div>
+
+<% end %>

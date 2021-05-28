@@ -1,0 +1,8 @@
+<%= form_with(local: false, url: search_path) do |form| %>
+  <div>
+    <%= form.text_field :keyword %>
+    <%= form.submit 'Search' %>
+  </div>
+<% end %>
+
+<div id="id_list_products"></div>
