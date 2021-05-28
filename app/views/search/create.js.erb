@@ -2,10 +2,10 @@ document.getElementById("id_books_list").innerHTML = "";
 var bookArray = [];
 
 <% @books.each do |book| %>
-  bookArray.push(book)
+  bookArray.push(<%= book.name %>)
 <% end %>
 
-for (var i = 0, i <bookArray.length, i++)
+for (var i = 0, i < bookArray.length, i++)
 
 var node = document.createElement("div");
 var textNode = document.createTextNode(bookArray[i]);
