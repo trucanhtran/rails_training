@@ -4,9 +4,7 @@ class SearchController < ApplicationController
   end
 
   def create
-    @books = Book.where("name LIKE ?", "%#{params[:keyword]}%")
-    respond_to do |format|
-      format.js
-    end
+    @books = Book.where("name LIKE ?", "%#{params[:aaa]}%")
+    render json: @books
   end
 end
