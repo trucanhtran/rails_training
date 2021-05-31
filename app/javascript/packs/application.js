@@ -15,22 +15,10 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-global.$ = require('jquery')
+require('jquery')
 
-$(document).on("onkeyup", "#id_keyword", function () {
-  $.ajax({
-    url: "/search",
-    type: "POST",
-    dataType: "json",
-    data: {
-      aaa: $("#id_keyword").value,
-      authenticity_token: window._token,
-    },
-    success: function (data) {
-      debugger;
-    },
-    error: function (data) {
-      debugger;
-    },
-  });
-});
+$(document).ready(function(event){
+
+
+
+})
