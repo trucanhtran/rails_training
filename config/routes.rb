@@ -18,5 +18,7 @@ Rails.application.routes.draw do
   post 'search', to: 'search#create'
   #Book controller
   resources :books
+  #search user
+  post 'search_user', to: 'search#search_user'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
