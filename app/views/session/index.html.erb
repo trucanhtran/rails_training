@@ -1,13 +1,103 @@
 <div id="nav"> <%= render 'header', user: @user %> </div>
 
+<!--Begin Slider!-->
+<div id="id_slider">
+  <%= image_tag("slider1.jpg", class: "img-banner" )%>
+  <!--Hot product!-->
+  <div class="content">
+    <div class="title">HOT</div>
+    <div class="hot-products">
+      <div class="card">
+        <%= image_tag("product.jpg", class: "card-img-top") %>
+        <div class="card-body">
+          <h5 class="card-title">Product</h5>
+          <p class="card-text">Some quick example text to build on the Product and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Add to cart</a>
+        </div>
+      </div>
+      <div class="card">
+        <%= image_tag("product.jpg", class: "card-img-top") %>
+        <div class="card-body">
+          <h5 class="card-title">Product</h5>
+          <p class="card-text">Some quick example text to build on the Product and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Add to cart</a>
+        </div>
+      </div>
+      <div class="card">
+        <%= image_tag("product.jpg", class: "card-img-top") %>
+        <div class="card-body">
+          <h5 class="card-title">Product</h5>
+          <p class="card-text">Some quick example text to build on the Product and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Add to cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Sub Slider!-->
+  <%= image_tag("slider2.jpg", class: "img-banner" )%>
+  <!--New Products!-->
+  <div class="content">
+    <div class="title">New Products</div>
+    <div class="hot-products">
+      <div class="card">
+        <%= image_tag("new_product.jpg", class: "card-img-top") %>
+        <div class="card-body">
+          <h5 class="card-title">New product</h5>
+          <p class="card-text">Some quick example text to build on the Product and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Add to cart</a>
+        </div>
+      </div>
+      <div class="card">
+        <%= image_tag("new_product.jpg", class: "card-img-top") %>
+        <div class="card-body">
+          <h5 class="card-title">New product</h5>
+          <p class="card-text">Some quick example text to build on the Product and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Add to cart</a>
+        </div>
+      </div>
+      <div class="card">
+        <%= image_tag("new_product.jpg", class: "card-img-top") %>
+        <div class="card-body">
+          <h5 class="card-title">New product</h5>
+          <p class="card-text">Some quick example text to build on the Product and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Add to cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--End Slider!-->
+
+<!--Begin Content!-->
+<div id="id_content">
+  <div class="title ">
+    Review Products
+  </div>
+  <div class="content">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+
+    <div class="card text-center" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+
+    <div class="card text-end" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="btn-group">
-  <% if has_login? === false %>
-    <div class = "btn-block">
-      <%= link_to 'Sign Up', new_user_path, class: "btn btn-primary btn-signup" %>
-    </div>
-    <div class="btn-block">
-      <%= link_to 'Login', login_path, class: "btn btn-primary btn-login" %>
-    </div>
     <div class="flash">
       <% flash.each do |key,value|  %>
         <div class= "flash flash-<% key %>">
@@ -15,7 +105,7 @@
         </div>
       <% end %>
     </div>
-  <% else %>
+   <% if has_login? === true %>
     <div class="card">
       <div class= "card-profile">
         <div>

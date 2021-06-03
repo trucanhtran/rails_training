@@ -1,14 +1,36 @@
 @import "bootstrap";
 @import "introduction";
+@import "session";
+
+/*
+Choose 5 color
+blue : #44d0cc
+pink: #ff9a76 #ffeadb
+grey: #637373
+black: #000
+*/
 
 * {
   margin: 2px;
   box-sizing: border-box;
+  font-size: 15px;
+}
+
+.bg-dark {
+  background-color: #44d0cc !important;
 }
 
 #nav {
   padding: 1px;
   justify-content: left;
+}
+
+#nav .navbar-search input {
+  border-radius: 20px;
+  border: none;
+  color: #637373;
+  line-height: 1.5;
+  padding-left: 15px;
 }
 
 .container-fluid .form,
@@ -36,11 +58,12 @@
 }
 
 .btn {
-  background-color: #000;
+  background-color: #ff9a76;
   min-width: 200px;
   font-size: 18px;
   border-radius: 40px;
   cursor: pointer;
+  border: none;
 }
 .btn-seperate {
   display: flex;
@@ -55,26 +78,4 @@
 
 .flash-errors {
   color: #fa1e0e;
-}
-.card .card-body {
-  margin: auto;
-}
-.card .img-avatar {
-  border-radius: 100px;
-}
-.card .card-profile {
-  margin-top: 24px;
-  min-width: 100%;
-}
-
-.card .btn-block {
-  margin-left: auto;
-  margin-right: auto;
-}
-.card .card-profile div + div {
-  padding-top: 8px;
-}
-
-.card .card-profile span {
-  font-weight: bold;
 }
