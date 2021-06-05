@@ -4,6 +4,6 @@ class SearchController < ApplicationController
 
   def search
     @foods = Foods.where("lower(name) LIKE ?", params: "%#{:keyword}%")
-    render @food.js
+    render json: @foods
   end
 end

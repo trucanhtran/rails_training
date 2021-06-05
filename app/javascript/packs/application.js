@@ -17,18 +17,20 @@ ActiveStorage.start()
 
 require ("jquery");
 
+function appenText(data){
+  for (var i=0; i < data,length; i++){
+    var node = document.createElement("div");
+    var textNode = document.createTextNode(data[i].value);
+    node.appendChild(textNode);
+    document.getElementById("id_list_foods").appendChild(node);
+  }
+};
+
 $(document).ready(function(){
   $(document).on("keyup", "#id_keyword", function(event){
     const keyword = event.target.value;
+    $.post("/search", {keyword: keyword}, function(data, status){
+      appendText(data);
+    });
   });
-
-  $.post("/search",
-  {
-    name: "Donald Duck",
-    city: "Duckburg"
-  },
-  function(data, status){
-    alert("Data: " + data + "\nStatus: " + status);
-  });
-
 });
