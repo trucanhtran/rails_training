@@ -15,9 +15,10 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-require ("jquery");
+require("jquery");
 
 function appenText(data){
+  document.getElementById ("id_list_foods").innerHTML="";
   for (var i=0; i < data,length; i++){
     var node = document.createElement("div");
     var textNode = document.createTextNode(data[i].value);
@@ -29,7 +30,7 @@ function appenText(data){
 $(document).ready(function(){
   $(document).on("keyup", "#id_keyword", function(event){
     const keyword = event.target.value;
-    $.post("/search", {keyword: keyword}, function(data, status){
+    $.post("search", {keyword: keyword}, function(data, status){
       appendText(data);
     });
   });
