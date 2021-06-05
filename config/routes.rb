@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :foods
-   root to: 'session#index'
+  root to: 'session#index'
   get 'list_users', to: 'users#index', as: 'list_users'
   resources :users, except: [:index]
   get 'signup', to: 'users#new'

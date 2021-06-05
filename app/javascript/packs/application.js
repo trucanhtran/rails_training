@@ -30,7 +30,7 @@ function appenText(data){
 $(document).ready(function(){
   $(document).on("keyup", "#id_keyword", function(event){
     const keyword = event.target.value;
-    $.post("search", {keyword: keyword}, function(data, status){
+    $.post("/search", {keyword: keyword}, function(data, status){
       appendText(data);
     });
   });
