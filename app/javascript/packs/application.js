@@ -14,3 +14,21 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+require ("jquery");
+
+$(document).ready(function(){
+  $(document).on("keyup", "#id_keyword", function(event){
+    const keyword = event.target.value;
+  });
+
+  $.post("/search",
+  {
+    name: "Donald Duck",
+    city: "Duckburg"
+  },
+  function(data, status){
+    alert("Data: " + data + "\nStatus: " + status);
+  });
+
+});
