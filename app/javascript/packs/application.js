@@ -17,11 +17,11 @@ ActiveStorage.start()
 
 require("jquery");
 
-function appenText(data){
+function appendText(data){
   document.getElementById ("id_list_foods").innerHTML="";
-  for (var i=0; i < data,length; i++){
+  for (var i=0; i < data.length; i++){
     var node = document.createElement("div");
-    var textNode = document.createTextNode(data[i].value);
+    var textNode = document.createTextNode(data[i].nameg);
     node.appendChild(textNode);
     document.getElementById("id_list_foods").appendChild(node);
   }

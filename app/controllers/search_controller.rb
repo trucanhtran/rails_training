@@ -3,7 +3,7 @@ class SearchController < ApplicationController
   end
 
   def search
-    @foods = Foods.where("name LIKE ?", "%#{params[:keyword]}%")
+    @foods = Food.where("name LIKE ?", "%#{params[:keyword]}%")
     render json: @foods
   end
 end
