@@ -1,0 +1,49 @@
+<div>
+  <%= @customer.dig("service_type") %>
+</div>
+<%= form_with do |form| %>
+<div>
+  <h4>
+   Customer Delivery Configuration
+  </h4>
+</div>
+<div>
+  <%= form.check_box :trial_order, checked: @customer.dig("trial_order") %>
+  <%= form.label :trial_order %>
+</div>
+<div>
+  <%= form.label :customer_commercial_website %>
+  <%= form.text_field :customer_commercial_website, value: @customer.dig("customer_commercial_website") %>
+</div>
+<div>
+  <%= form.label :customer_name %>
+  <%= form.text_field :customer_name, value: @customer.dig("customer_name") %>
+</div>
+<div>
+  <%= form.label :customer_time_zone %>
+  <%= form.time_zone_select :customer_time_zone  %>
+</div>
+<div>
+  <%= form.label :existing_account %>
+  <%= form.radio_button :available, @customer.dig("existing_account") %>
+   <%= form.label :new_account %>
+  <%= form.radio_button :available, @customer.dig("new_account"), checked: true %>
+</div>
+<div>
+  <h4>
+   Tech Customer Contact
+  </h4>
+</div>
+<div>
+  <%= form.label :tech_contact_name %>
+  <%= form.text_field :tech_contact_name, value: @customer.dig("tech_contact_name") %>
+</div>
+<div>
+  <%= form.label :tech_contact_email %>
+  <%= form.text_field :tech_contact_email, value: @customer.dig("tech_contact_email") %>
+</div>
+<div>
+  <%= form.label :tech_contact_telephone %>
+  <%= form.text_field :tech_contact_telephone, value: @customer.dig("tech_contact_telephone") %>
+</div>
+<% end %>
